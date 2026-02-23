@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phả Ký Việt | Xây dựng và quản lý cây gia phả</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="/ic_launcher_ios.png">
+    <link rel="apple-touch-icon" href="/ic_launcher_ios.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        vplans: {
+                            teal: '#00c4a7',
+                            dark: '#0a0c14'
+                        }
+                    },
+                    boxShadow: {
+                        'brilliant': '0 40px 120px -20px rgba(0, 196, 167, 0.08), 0 20px 40px -10px rgba(0, 0, 0, 0.02)',
+                        'mockup': '0 100px 150px -40px rgba(0, 0, 0, 0.12), 0 20px 40px -10px rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #ffffff;
+            transition: background-color 0.4s ease-in-out;
+        }
+        .dark body {
+            background-color: #05070a;
+        }
+        .grid-bg {
+            background-image:
+                linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .dark .grid-bg {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .tight-heading {
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+        .cursor-blink {
+            display: inline-block;
+            width: 3px;
+            height: 1.1em;
+            background-color: #00c4a7;
+            margin-left: 6px;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
